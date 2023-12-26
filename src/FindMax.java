@@ -7,6 +7,13 @@ public class FindMax<T extends Comparable<T>> {
         this.values = values;
     }
 
+    public void printMax(){
+        T max = getMax();
+
+        if(max == null) System.out.println("Enter some numbers");
+        else System.out.println("Max of given values: " + max);
+    }
+
     public T getMax() {
         return FindMax.getMax(values);
     }
