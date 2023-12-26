@@ -32,18 +32,34 @@ public class App {
         return num3;
     }
 
+    public static String findMax(String num1, String num2, String num3) {
+        int maxOfFirstTwo = num1.compareTo(num2);
+
+        String maxOfTwo;
+        if (maxOfFirstTwo > 0)
+            maxOfTwo = num1;
+        else
+            maxOfTwo = num2;
+
+        int maxOfAllThree = maxOfTwo.compareTo(num3);
+
+        if (maxOfAllThree > 0)
+            return maxOfTwo;
+
+        return num3;
+    }
+
     public static void main(String[] args) throws Exception {
-        // Float num1 = 20.5;
         // Test case 1
         System.out.println("TC 1");
-        System.out.println("Max of 20.5, 15.1, 10.9: " + findMax(20.5F, 15.1F, 10.9F));
+        System.out.println("Max of Apple, Peach, Banana: " + findMax("Apple", "Peach", "Banana"));
 
         // Test case 2
         System.out.println("TC 2");
-        System.out.println("Max of 20.1, 35.3, 10.6: " + findMax(20.1F, 35.3F, 10.6F));
+        System.out.println("Max of Peach, Banana, Apple: " + findMax("Peach", "Banana", "Apple"));
 
         // Test case 3
         System.out.println("TC 3");
-        System.out.println("Max of 20.4, 15.5, 50.5: " + findMax(20.4F, 15.5F, 50.5F));
+        System.out.println("Max of Banana, Apple, Peach: " + findMax("Banana", "Apple", "Peach"));
     }
 }
